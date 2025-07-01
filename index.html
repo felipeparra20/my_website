@@ -9,10 +9,48 @@
 </head>
 
 <body>
-	<h1>My Personal Dashboard</h1>
-	<div style="border: 3px solid blue; padding: 10px; margin:10px; background-color:red;">
-	<h2>Crypto Widget</h2>
-	<p>Crypto info will go here</p>
+	<h1>My Dashboard</h1>
+	<p>Welcome to my dashboard!</p>
+
+	<div class ="flexcontainer">
+
+	<table>
+		<tr>
+			<th>Cryptocurrency</th>
+			<th>Current Price</th>
+			<th>24 hr Price Change ($)</th>
+			<th>24 hr Price Change (%)</th>
+		</tr>
+		<tr>
+			<td>Bitcoin (BTC)</td>
+			<td id="btcPrice">📊</td>
+			<td id="btcChangeDollar">📊</td>
+			<td id="btcChangePercent">📊</td>
+		</tr>
+		<tr>
+			<td>Ethereum (ETH)</td>
+			<td id="ethPrice">⌛</td>
+			<td id="ethChangeDollar">⌛</td>
+			<td id="ethChangePercent">⌛</td>
+		</tr>
+		<tr>
+			<td>Solana (SOL)</td>	
+			<td id="solPrice">⚡</td>
+			<td id="solChangeDollar">⚡</td>
+			<td id="solChangePercent">⚡</td>
+		</tr>
+		<tr>
+			<td>XRP (XRP)</td>
+			<td id="xrpPrice">⏰</td>
+			<td id="xrpChangeDollar">⏰</td>
+			<td id="xrpChangePercent">⏰</td>
+		</tr>
+	</table>
+
+	<button class ="button" onclick="onclickParameters()">🔄
+	</button>
+
 	</div>
+
 </body>
 </html>
