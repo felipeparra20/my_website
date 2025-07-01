@@ -106,3 +106,6 @@ function onclickParameters() {
 
 cryptoIntervalID = setInterval(refreshCryptoTable, 900000);
 
+document.addEventListener("DOMContentLoaded", function() {
+    refreshCryptoTable();
+});
