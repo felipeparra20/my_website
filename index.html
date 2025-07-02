@@ -17,7 +17,7 @@
 	<table>
 		<tr>
 			<th>Cryptocurrency</th>
-			<th>Current Price</th>
+			<th>Current Price ($)</th>
 			<th>24 hr Price Change ($)</th>
 			<th>24 hr Price Change (%)</th>
 		</tr>
@@ -47,10 +47,52 @@
 		</tr>
 	</table>
 
-	<button class ="button" onclick="onclickParameters()">🔄
+
+	
+	<button class ="button" onclick="cryptoButton()">🔄
 	</button>
 
+	<img src="pic.jpg" >
+
 	</div>
+
+	<div class ="flexcontainer">
+<table class="stockWidget">
+		<tr>
+			<th>Stocks</th>
+			<th>Current/Closing Price ($)</th>
+			<th>Change Since Last Trading Day ($)</th>
+		</tr>
+		<tr>
+			<td>VOO</td>
+			<td id="VOOPrice">📊</td>
+			<td id="VOOChange">📊</td>
+		</tr>
+		<tr>
+			<td>FBGRX</td>
+			<td id="FBGRXPrice">⌛</td>
+			<td id="FBGRXChange">⌛</td>
+		</tr>
+		<tr>
+			<td>QQQM</td>	
+			<td id="QQQMPrice">⚡</td>
+			<td id="QQQMChange">⚡</td>
+		</tr>
+		<tr>
+			<td>SCHW</td>
+			<td id="SCHWPrice">⏰</td>
+			<td id="SCHWChange">⏰</td>
+		</tr>
+				<tr>
+			<td>SCHD</td>
+			<td id="SCHDPrice">🌀</td>
+			<td id="SCHDChange">🌀</td>
+		</tr>
+	</table>
+
+		<button class ="button" onclick="stockButton()">🔄
+	</button>
+</div>
 
 </body>
 </html>

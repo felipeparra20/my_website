@@ -95,17 +95,139 @@ function refreshCryptoTable() {
     }
 })
 
-.catch(error => console.error('Error fetching data:', error));
+.catch(error => console.error('Error fetching crypto data:', error));
 }
 
-function onclickParameters() {
+function cryptoButton() {
     refreshCryptoTable();
     clearInterval(cryptoIntervalID);
     cryptoIntervalID = setInterval(refreshCryptoTable, 900000); 
+}
+
+function refreshStockTable() {
+    // Update VOO
+    fetch("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=VOO&apikey=O6XK5IPJCQOKE2L5")
+        .then(response => response.json())
+
+        .then(data => {
+        console.log(data);
+    
+    document.getElementById("VOOPrice").innerText = parseFloat(data["Global Quote"]["05. price"]).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    document.getElementById("VOOChange").innerText = parseFloat(data["Global Quote"]["09. change"]).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+   
+    if (data["Global Quote"]["09. change"] < 0) {
+        let tempVar = document.getElementById("VOOChange");
+        tempVar.classList.add("negative");
+    }
+    else {
+        let tempVar = document.getElementById("VOOChange");
+        tempVar.classList.add("positive");
+    }
+
+    })
+
+    .catch(error => console.error('Error fetching stock data:', error));
+
+    // Update FBGRX
+    fetch("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=FBGRX&apikey=O6XK5IPJCQOKE2L5")
+        .then(response => response.json())
+
+        .then(data => {
+        console.log(data);
+    
+    document.getElementById("FBGRXPrice").innerText = parseFloat(data["Global Quote"]["05. price"]).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    document.getElementById("FBGRXChange").innerText = parseFloat(data["Global Quote"]["09. change"]).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+   
+    if (data["Global Quote"]["09. change"] < 0) {
+        let tempVar = document.getElementById("FBGRXChange");
+        tempVar.classList.add("negative");
+    }
+    else {
+        let tempVar = document.getElementById("FBGRXChange");
+        tempVar.classList.add("positive");
+    }
+
+    })
+
+    .catch(error => console.error('Error fetching stock data:', error));
+
+    // Update QQQM
+    fetch("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=QQQM&apikey=O6XK5IPJCQOKE2L5")
+        .then(response => response.json())
+
+        .then(data => {
+        console.log(data);
+    
+    document.getElementById("QQQMPrice").innerText = parseFloat(data["Global Quote"]["05. price"]).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    document.getElementById("QQQMChange").innerText = parseFloat(data["Global Quote"]["09. change"]).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+   
+    if (data["Global Quote"]["09. change"] < 0) {
+        let tempVar = document.getElementById("QQQMChange");
+        tempVar.classList.add("negative");
+    }
+    else {
+        let tempVar = document.getElementById("QQQMChange");
+        tempVar.classList.add("positive");
+    }
+
+    })
+
+    .catch(error => console.error('Error fetching stock data:', error));
+
+    // Update SCHW
+    fetch("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=SCHW&apikey=O6XK5IPJCQOKE2L5")
+        .then(response => response.json())
+
+        .then(data => {
+        console.log(data);
+    
+    document.getElementById("SCHWPrice").innerText = parseFloat(data["Global Quote"]["05. price"]).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    document.getElementById("SCHWChange").innerText = parseFloat(data["Global Quote"]["09. change"]).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+   
+    if (data["Global Quote"]["09. change"] < 0) {
+        let tempVar = document.getElementById("SCHWChange");
+        tempVar.classList.add("negative");
+    }
+    else {
+        let tempVar = document.getElementById("SCHWChange");
+        tempVar.classList.add("positive");
+    }
+
+    })
+
+    .catch(error => console.error('Error fetching stock data:', error));
+
+    // Update SCHD
+    fetch("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=SCHD&apikey=O6XK5IPJCQOKE2L5")
+        .then(response => response.json())
+
+        .then(data => {
+        console.log(data);
+    
+    document.getElementById("SCHDPrice").innerText = parseFloat(data["Global Quote"]["05. price"]).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    document.getElementById("SCHDChange").innerText = parseFloat(data["Global Quote"]["09. change"]).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+   
+    if (data["Global Quote"]["09. change"] < 0) {
+        let tempVar = document.getElementById("SCHDChange");
+        tempVar.classList.add("negative");
+    }
+    else {
+        let tempVar = document.getElementById("SCHDChange");
+        tempVar.classList.add("positive");
+    }
+
+    })
+
+    .catch(error => console.error('Error fetching stock data:', error));
+}   
+
+function stockButton() {
+    refreshStockTable();
 }
 
 cryptoIntervalID = setInterval(refreshCryptoTable, 900000);
 
 document.addEventListener("DOMContentLoaded", function() {
     refreshCryptoTable();
+    refreshStockTable();
 });
